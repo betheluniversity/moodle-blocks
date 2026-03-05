@@ -1,16 +1,17 @@
 <?php
-    class block_library extends block_base {
-    public function init() {
-        $this->title = get_string('library', 'block_library');
-    }
+    	class block_library extends block_base {
+    		public function init() {
+        		$this->title = get_string('library', 'block_library');
+			$this->version = 2018031300;
+    		}
 
-public function get_content() {
-    if ($this->content !== NULL) {
-        return $this->content;
-    }
+		public function get_content() {
+    			if ($this->content !== NULL) {
+        			return $this->content;
+    			}
 
-    $this->content = new stdClass;
-    $this->content->text = '
+    			$this->content = new stdClass;
+    			$this->content->text = '
 <style type="text/css">
 .categoryitems{display: none}
 a.hiddenajaxlink{display: none}
@@ -29,7 +30,7 @@ a.hiddenajaxlink{display: none}
 </style>
 
 <!--main styles -->
-    
+
     <style type="text/css">
 <!--
 .wrapper{width:100%;
@@ -59,11 +60,11 @@ margin-top: 1em; /*bottom spacing between header and rest of content*/
     margin-right:auto;
 margin-left:auto;
 }
-    
+
 .arrowlistmenu .menuheader:hover{
 background: none repeat scroll 0 0 #004977;
 }
-    
+
 .arrowlistmenu .openheader{ /*CSS class to apply to expandable header when it\'s expanded*/
 background: none repeat scroll 0 0 #004977;
     }
@@ -81,7 +82,7 @@ color: #3366ff;
 .arrowlistmenu ul li a:hover{
 background-color: #ccc !important;
 }
-    
+
 .arrowlistmenu p{
 padding-bottom: .3em;
 color: #4C4C4C;
@@ -146,14 +147,14 @@ font-size: 90%;
 padding: .8em 0em .8em 0em;
 
 }
-    
-    
+
+
 .fancylist ul,.fancylist p{
 padding-left:.5em;
 margin:1em;
 }
 .fancylist li {
-list-style:none; 
+list-style:none;
 padding-left:.2em;
 }
 
@@ -238,8 +239,8 @@ a.hiddenajaxlink{display: none}
 </style><style type="text/css">
 .subcategoryitems{display: none}
 a.hiddenajaxlink{display: none}
-</style> 
-                        
+</style>
+
     <div class="wrapper">
 
 <!--header image-->
@@ -247,141 +248,125 @@ a.hiddenajaxlink{display: none}
         <a style="border-top-style: none; border-right-style: none; border-bottom-style: none; border-left-style: none; border-width: initial; border-color: initial; border-image: initial;" href="http://www.bethel.edu/library/"><img src="https://moodle.bethel.edu/blocks/library/library_graphic.png"></a>
       </div>
 
-<!– This script applies the PrimoQuery to the searchForm –>
-<script type="text/javascript">
-    function searchPrimo() 
-    {
-        document.getElementById("primoQuery").value = "any,contains," + document.getElementById("primoQueryTemp").value.replace(/[,]/g, " ");
-        document.forms["searchForm"].submit();
-    }
-</script>
-<div class="arrowlistmenu">
-    <!--Menu Item 1 -->
-    <!-- First Drop down menu --> 
-    <h3 class="menuheader expandable openheader" headerindex="0h">
-        <span class="accordprefix"></span>
-        <span class="accordprefix"></span>
-        Library Search
-        <span class="accordsuffix"></span>
-        <span class="accordsuffix"></span>
-    </h3>
+      <!– This script applies the PrimoQuery to the searchForm –>
+              <script type="text/javascript">
+      function searchPrimo()
+          {
+      document.getElementById("primoQuery").value = "any,contains," + document.getElementById("primoQueryTemp").value.replace(/[,]/g, " ");
+      document.forms["searchForm"].submit();
+      }
+      </script>
+              <div class="arrowlistmenu">
+      <!--Menu Item 1 -->
+                  <!-- First Drop down menu -->
+        <h3 class="menuheader expandable openheader" headerindex="0h">
+          <span class="accordprefix"></span>
+          <span class="accordprefix"></span>
+                  Library Search
+          <span class="accordsuffix"></span>
+          <span class="accordsuffix"></span>
+        </h3>
 
-    <ul class="categoryitems" contentindex="0c" style="display: block;">
-        <li>
-            <p>
-                Articles, Books, Videos and More
-            </p>
-            <p>
-                <a href="http://libguides.bethel.edu/c.php?g=670772&p=4721385">Find out more about how to use CLICsearch</a>
-            </p>
+        <ul class="categoryitems" contentindex="0c" style="display: block;">
+          <li>
+            <p>Articles, Books, Videos and More</p>
             <div id="wcs2n">
                 <!– Search field for Primo excludes newspaper articles, reviews, and dissertations–>
-                <form action="https://clicsearch.bethel.edu/primo-explore" enctype="application/x-www-form-urlencoded; charset=utf-8" id="simple" method="get" name="searchForm" onsubmit="searchPrimo()" target="_blank">
-                    <!-- Customizable Parameters -->
-                    <input name="institution" type="hidden" value="01CLIC_BETHEL" /> 
-                    <input name="vid" type="hidden" value="BETHEL" /> 
-                    <input name="tab" type="hidden" value="default_tab" /> 
-                    <input name="search_scope" type="hidden" value="bethel" /> 
+      <form action="https://libsearch.bethel.edu/discovery/search" enctype="application/x-www-form-urlencoded; charset=utf-8" id="simple" method="get" name="searchForm" onsubmit="searchPrimo()" target="new">
+          <!-- Customizable Parameters -->
+          <input name="vid" type="hidden" value="01CLIC_BETHEL:BETHEL" />
+          <input name="tab" type="hidden" value="CLIC_and_BETHEL_ALL_Slot" />
+          <input name="search_scope" type="hidden" value="CLIC_and_BETHEL_ALL_Profile" />
+          <input name="mode" type="hidden" value="Basic" />
 
-                    <input name="mode" type="hidden" value="Basic" /> 
-                    <!-- Fixed parameters --> 
-                    <input name="displayMode" type="hidden" value="full" /> 
-                    <input name="bulkSize" type="hidden" value="35" /> 
-                    <input name="highlight" type="hidden" value="true" /> 
-                    <input name="dum" type="hidden" value="true" /> 
-                    <input id="primoQuery" name="query" type="hidden" /> 
-                    <input name="displayField" type="hidden" value="all" /> 
-                    <!-- Enable this if "Expand My Results" is enabled by default in Views Wizard --> 
-                    <input name="pcAvailabiltyMode" type="hidden" value="true" /> 
-                    <input id="primoQueryTemp" size="50" style="line-height: 3em; height: 3em; width: 75%; border-radius: .3em .3em .3em .3em; position: relative; top: 1px;" type="text" value="" />
-                    <!-- Added three lines to create necessary exclude facets --> 
-                    <input type="hidden" name="facet" value="rtype,exclude,newspaper_articles">
-                    <input type="hidden" name="facet" value="rtype,exclude,reviews">
-                    <input type="hidden" name="facet" value="rtype,exclude,dissertations">
-                    <!-- Search Button --> 
-                    <input class="btn search-go"; alt="Search" id="go" onclick="searchPrimo()" style="border-radius: .3em .3em .3em .3em;" title="Search" type="button" value="Search" />
-                    <a style="font-family: Gotham A,Gotham B,Helvetica,Arial,sans" href="https://clicsearch.bethel.edu/primo-explore/search?vid=BETHEL&lang=en_US&sortby=rank&mode=advanced">Advanced Search</a>
-                </form>
-            </div>
-        </li>
-        <!-- Links to library pages on these topics --> 
-        <li>
-            <p style="clear:both;">
-                Or, Find Something Specific
-            </p>
+      <input name="mode" type="hidden" value="Basic" />
+          <!-- Fixed parameters -->
+          <input name="displayMode" type="hidden" value="full" />
+          <input name="bulkSize" type="hidden" value="35" />
+          <input name="highlight" type="hidden" value="true" />
+          <input name="dum" type="hidden" value="true" />
+          <input id="primoQuery" name="query" type="hidden" />
+          <input name="displayField" type="hidden" value="all" />
+          <!-- Enable this if "Expand My Results" is enabled by default in Views Wizard -->
+          <input name="pcAvailabiltyMode" type="hidden" value="true" />
+         <input id="primoQueryTemp" size="50" style="line-height: 3em; height: 3em; width: 100%; border-radius: .3em .3em .3em .3em; position: relative; top: 1px;" type="text" value="" />
+          <!-- Added three lines to create necessary exclude facets -->
+          <input type="hidden" name="facet" value="rtype,exclude,newspaper_articles">
+          <input type="hidden" name="facet" value="rtype,exclude,reviews">
+          <input type="hidden" name="facet" value="rtype,exclude,dissertations">
+          <!-- Search Button -->
+          <input class="btn search-go"; alt="Search" id="go" onclick="searchPrimo()" style="border-radius: .3em .3em .3em .3em;color: #0069aa;" title="Search" type="button" value="Search" />
+          <a style="font-family: Gotham A,Gotham B,Helvetica,Arial,sans;display: block;margin: 1em 0;" href="https://libsearch.bethel.edu/discovery/search?vid=01CLIC_BETHEL:BETHEL&lang=en&mode=advanced">Advanced Search</a>
+      </form>
+          </li>
+              <!-- Links to library pages on these topics -->
+          <li>
+            <p style="clear:both;font-weight: 800;padding-bottom: 0;margin-bottom: 0;">Find Something Specific</p>
             <ul class="specific">
-                <li>
-                    <a href="http://www.bethel.edu/library/research/find/scholarly-articles">Scholarly Articles</a>
-                </li>
-                <li>
-                    <a href="http://www.bethel.edu/library/research/find/books">Books</a>
-                </li>                                                        
-                <li>
-                    <a href="https://www.bethel.edu/library/research/find/theses">Theses</a>
-                </li>
-                <li>
-                    <a href="http://www.bethel.edu/library/research/find/ebooks">eBooks</a>
-                </li>
-                <li>
-                    <a href="http://www.bethel.edu/library/research/find/video">Video</a>
-                </li>
+              <li>
+                <a href="http://www.bethel.edu/library/research/find/scholarly-articles">Scholarly Articles</a>
+              </li>
+              <li>
+                <a href="http://www.bethel.edu/library/research/find/books">Books</a>
+              </li>
+              <li>
+                <a href="https://www.bethel.edu/library/research/find/theses">Theses</a>
+              </li>
+              <li>
+                <a href="http://www.bethel.edu/library/research/find/ebooks">eBooks</a>
+              </li>
+              <li>
+                <a href="http://www.bethel.edu/library/research/find/video">Video</a>
+              </li>
             </ul>
-            <div style="clear:both;"></div>
-        </li>
-    </ul>
+            <div style="clear:both;">
+            </div>
+          </li>
+        </ul>
 
-    <!--Menu Item 2-->
-    <!-- Second Drop down menu --> 
-    <h3 class="menuheader expandable" headerindex="1h">
-        <span class="accordprefix"></span>
-        <span class="accordprefix"></span>
-        In-depth Research
-        <span class="accordsuffix"></span>
-        <span class="accordsuffix"></span>
-    </h3>
-    <ul class="categoryitems specific" contentindex="1c" style="display: none;">
-        <li>
+      <!--Menu Item 2-->
+                  <!-- Second Drop down menu -->
+        <h3 class="menuheader expandable" headerindex="1h">
+          <span class="accordprefix"></span>
+          <span class="accordprefix"></span>
+                In-depth Research
+          <span class="accordsuffix"></span>
+          <span class="accordsuffix"></span>
+        </h3>
+        <ul class="categoryitems specific" contentindex="1c" style="display: none;">
+          <li>
             <a href="http://www.bethel.edu/library/research/find/scholarly-articles">Use article databases</a>
-            <p>
-                Find scholarly articles in your subject
-            </p>
-        </li>         
-        <li>
+            <p>Find scholarly articles in your subject</p>
+          </li>
+          <li>
             <a href="http://libguides.bethel.edu/browse.php?o=s" target="_blank">Lookup Research Guide</a>
-            <p>
-                Consult a subject page--find where to search &amp; how to get right to what you need.
-            </p>
-        </li>
-        <li>
+            <p>Consult a subject page--find where to search &amp; how to get right to what you need.</p>
+          </li>
+          <li>
             <a href="https://www.bethel.edu/library/research/research-appointment">Meet with a librarian</a>
-            <p>
-                Gain confidence and expertise in your research
-            </p>
-        </li>
-    </ul>
-    <div style="clear:both"></div>
+            <p>Gain confidence and expertise in your research</p>
+          </li>
+        </ul>
+        <div style="clear:both"></div>
 
 
-    <!--End Menu-->
-</div>
-<div class="fancylist">
-    <ul>
-        <li>
-            <a href="https://www.bethel.edu/library/accounts#refworks" target="_blank">RefWorks Login &amp; Help</a>
-        </li>
-    </ul>
-    <p>
-        Questions? <a href="http://www.bethel.edu/library/help/">Contact the Library</a>
-    </p>
-</div>
-                
+      <!--End Menu-->
+      </div>
+      <div class="fancylist">
+        <ul>
+            <li>
+              <a href="https://www.bethel.edu/library/accounts#refworks" target="_blank">RefWorks Login & Help</a>
+            </li>
+          </ul>
+        <p>Questions? <a href="http://www.bethel.edu/library/help/">Contact the Library</a></p>
+      </div>
+
 
 <!--End Wrapper-->
   </div>
 ';
-    $this->content->footer = '';
-
-    return $this->content;
-}
-}
+    			$this->content->footer = '';
+			return $this->content;
+		}
+	}
 ?>
