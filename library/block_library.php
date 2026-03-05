@@ -304,19 +304,19 @@ a.hiddenajaxlink{display: none}
             <p style="clear:both;font-weight: 800;padding-bottom: 0;margin-bottom: 0;">Find Something Specific</p>
             <ul class="specific">
               <li>
-                <a href="http://www.bethel.edu/library/research/find/scholarly-articles">Scholarly Articles</a>
+                <a href="http://www.bethel.edu/library/research/scholarly-articles">Scholarly Articles</a>
               </li>
               <li>
-                <a href="http://www.bethel.edu/library/research/find/books">Books</a>
+                <a href="http://www.bethel.edu/library/research/books">Books</a>
               </li>
               <li>
-                <a href="https://www.bethel.edu/library/research/find/theses">Theses</a>
+                <a href="https://www.bethel.edu/library/research/theses">Theses</a>
               </li>
               <li>
-                <a href="http://www.bethel.edu/library/research/find/ebooks">eBooks</a>
+                <a href="http://www.bethel.edu/library/research/ebooks">eBooks</a>
               </li>
               <li>
-                <a href="http://www.bethel.edu/library/research/find/video">Video</a>
+                <a href="http://www.bethel.edu/library/research/video">Video</a>
               </li>
             </ul>
             <div style="clear:both;">
@@ -335,11 +335,11 @@ a.hiddenajaxlink{display: none}
         </h3>
         <ul class="categoryitems specific" contentindex="1c" style="display: none;">
           <li>
-            <a href="http://www.bethel.edu/library/research/find/scholarly-articles">Use article databases</a>
+            <a href="http://www.bethel.edu/library/research/scholarly-articles">Use article databases</a>
             <p>Find scholarly articles in your subject</p>
           </li>
           <li>
-            <a href="http://libguides.bethel.edu/browse.php?o=s" target="_blank">Lookup Research Guide</a>
+            <a href="https://libguides.bethel.educkajI5JGwwJGgxMTAyMjg3OTM0" target="_blank">Lookup Research Guide</a>
             <p>Consult a subject page--find where to search &amp; how to get right to what you need.</p>
           </li>
           <li>
