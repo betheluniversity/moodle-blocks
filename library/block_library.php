@@ -313,7 +313,7 @@ a.hiddenajaxlink{display: none}
                 <a href="https://www.bethel.edu/library/research/theses">Theses</a>
               </li>
               <li>
-                <a href="http://www.bethel.edu/library/research/ebooks">eBooks</a>
+                <a href="http://www.bethel.edu/library/research/books">eBooks</a>
               </li>
               <li>
                 <a href="http://www.bethel.edu/library/research/video">Video</a>
@@ -335,11 +335,11 @@ a.hiddenajaxlink{display: none}
         </h3>
         <ul class="categoryitems specific" contentindex="1c" style="display: none;">
           <li>
-            <a href="http://www.bethel.edu/library/research/scholarly-articles">Use article databases</a>
+            <a href="https://libguides.bethel.edu/az/databases?s=256697">Use article databases</a>
             <p>Find scholarly articles in your subject</p>
           </li>
           <li>
-            <a href="https://libguides.bethel.educkajI5JGwwJGgxMTAyMjg3OTM0" target="_blank">Lookup Research Guide</a>
+            <a href="https://libguides.bethel.edu/" target="_blank">Lookup Research Guide</a>
             <p>Consult a subject page--find where to search &amp; how to get right to what you need.</p>
           </li>
           <li>
